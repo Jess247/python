@@ -3,10 +3,20 @@ tableData = [['apples', 'cherries', 'oranges', 'banana'], [
 
 
 def printTable(tData):
-    i = 0
-    for data in tData:
-        print(data[0].ljust(10), data[1].ljust(10),
-              data[2].ljust(10), data[3].ljust(10),)
+    colWidth = [0] * len(tData)
+    lengthOfList = len(tData[0])
+
+    for tableLen in range(len(tData)):
+        # sort list by length
+        sortedTable = sorted(tData[tableLen], key=len)
+        # set the column width to the largest string (the last)
+        colWidth[tableLen] = len(sortedTable[-1])
+
+    for strIndex in range(lengthOfList):
+        print()
+        for i in range(len(tData)):
+            string = tData[i][strIndex]
+            print(string.rjust(colWidth[i]), end=' ')
 
 
 printTable(tableData)
