@@ -21,17 +21,17 @@ class MyZombie:
             else:
                 break
 
-        zombies = (
-            zombiedice.examples.RandomCoinFlipZombie(name='Random'),
-            zombiedice.examples.RollsUntilInTheLeadZombie(
-                name='Until leading'),
-            zombiedice.examples.minNumShotgunsThenStopsZombie(
-                name='Stop at 2 Shotguns', minShotguns=2),
-            zombiedice.examples.minNumShotgunsThenStopsZombie(
-                name='Stop at 1 Shotguns', minShotguns=1),
-            MyZombie(name='My Zombie Bot')
-        )
+    zombies = (
+        zombiedice.examples.RandomCoinFlipZombie(name='Random'),
+        zombiedice.examples.RollsUntilInTheLeadZombie(
+            name='Until leading'),
+        zombiedice.examples.MinNumShotgunsThenStopsZombie(
+            name='Stop at 2 Shotguns', minShotguns=2),
+        zombiedice.examples.MinNumShotgunsThenStopsZombie(
+            name='Stop at 1 Shotguns', minShotguns=1),
+        # MyZombie(name='My Zombie Bot')
+    )
 
-        # run in web-GUI-Mode
-        zombiedice.runTournament(zombies=zombies, numGames=1000)
-        zombiedice.runWebGui(zombies=zombies, numGames=1000)
+    # run in web-GUI-Mode
+    zombiedice.runTournament(zombies=zombies, numGames=1000)
+    zombiedice.runWebGui(zombies=zombies, numGames=1000)
