@@ -1,4 +1,4 @@
-# findall method returns a list of all matches or tupels if the pattern contains groups
+# findall method returns a list of all matched strings or list of tupels with strings if the pattern contains groups
 import re
 # creates a list
 phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
