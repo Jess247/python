@@ -13,6 +13,8 @@ if (len(fname) < 1):
     fname = 'mbox-short.txt'
 fh = open(fname)
 for line in fh:
+    ''' sample line from mbox file 'From (pieces 0) rjlowe@iupui.edu (pieces 1) Fri Jan  4 14:50:18 2008'
+    '''
     if not line.startswith('From'):
         continue
     pieces = line.split()
