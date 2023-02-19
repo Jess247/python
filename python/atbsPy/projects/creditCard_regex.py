@@ -1,11 +1,19 @@
-''' This program will find credit card numbers in a text form the clipboard. 
+''' This program will find credit card numbers in a text from the clipboard. 
+    (without checking if it is a valid visa, master card etc format) 
     All found credit card numbers will be censored.
     The new text will be saved to the clipboard.'''
 import re
 import pyperclip
 
-# TODO: credit card regex
+# card regex
+cardRegex = re.compile(r'\d{4}\s\d{4}\s\d{4}\s\d{4}')
 
-# TODO: find matches in clipboard text and censor them
+# find matches in clipboard text and copy censored
+text = str(pyperclip.paste())
 
-# TODO: copy result to clipboard
+if cardRegex.findall(text):
+    pyperclip.copy(cardRegex.sub('CENSORED', text))
+    print(cardRegex.sub('CENSORED', text))
+else:
+    print("Nothing found!")
+# copy result to clipboard
