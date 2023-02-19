@@ -10,3 +10,5 @@ firstnameRegex = re.compile(r'^[A-Z][a-z]*\sWatanabe')
 print(firstnameRegex.search('Paul Watanabe'))
 print(firstnameRegex.search('Paul watanabe'))
 print(firstnameRegex.search('paul watanabe'))
+
+# sentenceRegex = re.compile(r'^(Alice|^Bob|^Carol)')
