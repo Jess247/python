@@ -18,7 +18,7 @@ phoneRegex = re.compile(r'''(
     # extension
     (\s*
     (ect|x|ext.)\s*\d{2,5})?
-    )''', re.VERBOSE)
+    ) ''', re.VERBOSE)
 
 # TODO: Regex for email
 emailRegex = re.compile(r'''
