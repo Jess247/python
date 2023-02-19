@@ -1,7 +1,8 @@
-''' This program will find credit card numbers in a text from the clipboard. 
-    (without checking if it is a valid visa, master card etc format) 
-    All found credit card numbers will be censored.
-    The new text will be saved to the clipboard.'''
+# This program will find credit card numbers in a text from the clipboard.
+# (without checking if it is a valid visa, master card etc format)
+# All found credit card numbers will be censored.
+# The new text will be saved to the clipboard.
+#!Python 3
 import re
 import pyperclip
 
