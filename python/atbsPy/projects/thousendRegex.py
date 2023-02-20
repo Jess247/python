@@ -11,4 +11,6 @@ print(firstnameRegex.search('Paul Watanabe'))
 print(firstnameRegex.search('Paul watanabe'))
 print(firstnameRegex.search('paul watanabe'))
 
-# sentenceRegex = re.compile(r'^(Alice|^Bob|^Carol)')
+sentenceRegex = re.compile(
+    r'^(Alice|^Bob|^Carol)\s(throws|eats|pets)\s\w*\.$', re.IGNORECASE)
+print(sentenceRegex.search('Bob pets cheese.'))
