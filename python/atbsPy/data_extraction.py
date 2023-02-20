@@ -20,7 +20,7 @@ phoneRegex = re.compile(r'''(
     (ect|x|ext.)\s*\d{2,5})?
     ) ''', re.VERBOSE)
 
-# TODO: Regex for email
+# Regex for email
 emailRegex = re.compile(r'''
 # username
 ([a-zA-Z0-9._%+-]+
@@ -31,7 +31,7 @@ a-zA-Z0-9.-]+
 # dot top level domain
 (\.[a-zA-Z]{2,4})
 )''', re.VERBOSE)
-# TODO: find matches in text
+# find matches in text
 text = str(pyperclip.paste())
 matches = []
 for groups in phoneRegex.findall(text):
@@ -41,7 +41,7 @@ for groups in phoneRegex.findall(text):
     matches.append(phoneNum)
 for groups in emailRegex.findall(text):
     matches.append(groups[0])
-# TODO: copy result to clipboard
+# copy result to clipboard
 if len(matches) > 0:
     pyperclip.copy('\n'.join(matches))
     print('Copied to clipboard: ')
