@@ -1,0 +1,9 @@
+# This program will ask a user the same question until he inputs 'no'
+import pyinputplus as pyip
+
+while True:
+    prompt = "Want to know how to keep an idiot busy for hours?\n"
+    response = pyip.inputYesNo(prompt)
+    if response == "no":
+        print("Thank you, goodbye!")
+        break
