@@ -10,24 +10,33 @@ wrongAnswers = 0
 
 # TODO: Add Timer
 
+
+def timer(seconds):
+    while seconds > 0:
+        seconds -= 1
+        time.sleep(1)
+    return None
+
+
 for questionNumber in range(numberOfQuestions):
-    # us random numbers
+    # use random numbers
     num1 = random.randint(0, 9)
     num2 = random.randint(0, 9)
 
     answer = input(f"{num1} x {num2} = ")
-
     if answerRegex.search(answer):
-
-        if int(answer) == num1 * num2 and wrongAnswers < 3:
+        if timer == None:
+            print("Out of time!")
+        elif int(answer) == num1 * num2 and wrongAnswers < 3:
             correctAnswers += 1
             print("Correct!")
+        elif wrongAnswers == 3:
+            print("Out of tries!")
         else:
             wrongAnswers += 1
             print("Incorrect")
-        if wrongAnswers == 3:
-            print("Out of tries!")
-    time.sleep(1)
+    else:
+        print("You need to enter a number!")
 
 
-print(f"Score: {round(correctAnswers / numberOfQuestions)}")
+print(f"Score: {correctAnswers}/{numberOfQuestions}")
