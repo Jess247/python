@@ -25,9 +25,8 @@ for questionNumber in range(numberOfQuestions):
 
     answer = input(f"{num1} x {num2} = ")
     if answerRegex.search(answer):
-        if timer == None:
-            print("Out of time!")
-        elif int(answer) == num1 * num2 and wrongAnswers < 3:
+
+        if int(answer) == num1 * num2 and wrongAnswers < 3:
             correctAnswers += 1
             print("Correct!")
         elif wrongAnswers == 3:
