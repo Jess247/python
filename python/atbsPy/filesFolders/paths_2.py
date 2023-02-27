@@ -24,3 +24,10 @@ print('tupel: ', (os.path.basename(calcFilePath),
       os.path.dirname(calcFilePath)))  # split is best practice
 # return string list of path
 print(calcFilePath.split(os.sep))
+# check paths
+print('exists: ', p.exists())
+print('is file: ', p.is_file())
+print('is dir: ', p.is_dir())
+print('os exists: ', os.path.exists(p))
+print('os is file: ', os.path.isfile(p))
+print('os is dir: ', os.path.isdir(p))
