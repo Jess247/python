@@ -7,16 +7,9 @@ answerRegex = re.compile("\d")
 numberOfQuestions = 10
 correctAnswers = 0
 wrongAnswers = 0
-
-# TODO: Add Timer
-
-
-def timer(seconds):
-    while seconds > 0:
-        seconds -= 1
-        time.sleep(1)
-    return None
-
+timeLimit = 8
+# Add Timer
+startTime = time.time()
 
 for questionNumber in range(numberOfQuestions):
     # use random numbers
@@ -26,11 +19,13 @@ for questionNumber in range(numberOfQuestions):
     answer = input(f"{num1} x {num2} = ")
     if answerRegex.search(answer):
 
-        if int(answer) == num1 * num2 and wrongAnswers < 3:
+        if int(answer) == num1 * num2 and wrongAnswers < 3 and time.time() - startTime < timeLimit:
             correctAnswers += 1
             print("Correct!")
         elif wrongAnswers == 3:
             print("Out of tries!")
+        elif time.time() - startTime > timeLimit:
+            print("You're out of tries")
         else:
             wrongAnswers += 1
             print("Incorrect")
