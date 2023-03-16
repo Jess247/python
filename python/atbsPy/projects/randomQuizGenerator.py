@@ -81,6 +81,16 @@ for quizNum in range(35):
         wrongAnswers = list(capitals.values())
         del wrongAnswers[wrongAnswers.index(correctAnswer)]
         wrongAnswers = random.sample(wrongAnswers, 3)
-        answerOptions = wrongAnswers + random.shuffle(answerOptions)
-        # TODO: write questions and answers in quiz file
-        # TODO: write solution in file
+        answerOptions = wrongAnswers + [correctAnswer]
+        random.shuffle(answerOptions)
+        # write questions and answers in quiz file
+        quizFile.write(
+            f'{questionNum + 1}. What is the capital of {states[questionNum]}?\n')
+        for i in range(4):
+            quizFile.write(f"   {'ABCD'[i]}. {answerOptions[i]}\n")
+            quizFile.write('\n')
+        # write solution in file
+        answerKeyFile.write(
+            f"{questionNum + 1}. {'ABCD'[answerOptions.index(correctAnswer)]}")
+        quizFile.close()
+        answerKeyFile.close()
