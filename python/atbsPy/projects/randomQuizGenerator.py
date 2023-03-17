@@ -69,7 +69,7 @@ for quizNum in range(35):
     answerKeyFile = open(f'capitalquiz_answers{quizNum + 1}.txt', 'w')
     # add head for the quiz
     quizFile.write('Name:\n\nDate:\n\nPeriod:\n\n')
-    quizFile.write((' ' * 20) + f'State Capitals Quiz (From{quizNum + 1}')
+    quizFile.write((' ' * 20) + f'State Capitals Quiz (From{quizNum + 1})')
     quizFile.write('\n\n')
     # shuffle states in random order
     states = list(capitals.keys())
@@ -88,9 +88,9 @@ for quizNum in range(35):
             f'{questionNum + 1}. What is the capital of {states[questionNum]}?\n')
         for i in range(4):
             quizFile.write(f"   {'ABCD'[i]}. {answerOptions[i]}\n")
-            quizFile.write('\n')
+        quizFile.write('\n')
         # write solution in file
         answerKeyFile.write(
             f"{questionNum + 1}. {'ABCD'[answerOptions.index(correctAnswer)]}")
-        quizFile.close()
-        answerKeyFile.close()
+    quizFile.close()
+    answerKeyFile.close()
