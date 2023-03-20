@@ -1,6 +1,6 @@
 #! python3
 # madLips.py generates a text with random words from user input
-from pathlib import Path
+import re
 
 # adjective = input("Enter an adjective: ")
 # noun = input("Enter an noun: ")
@@ -11,6 +11,9 @@ from pathlib import Path
 tf = open("madLips.txt")
 text = tf.read()
 t = ''
+regex = re.compile(r"(VERB)?(ADVERB)?(ADJECTIVE)?(NOUN)?")
+
+# TODO: change code below with regex sub
 print(text)
 for word in text.split():
     if word == "ADJECTIVE":
