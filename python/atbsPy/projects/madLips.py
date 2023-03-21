@@ -2,16 +2,15 @@
 # madLips.py generates a text with random words from user input
 import re
 
-# adjective = input("Enter an adjective: ")
-# noun = input("Enter an noun: ")
-# adverb = input("Enter an adverb: ")
-# verb = input("Enter an verb: ")
-# noun2 = input("Enter another noun: ")
+adjective = input("Enter an adjective: ")
+noun = input("Enter an noun: ")
+adverb = input("Enter an adverb: ")
+verb = input("Enter an verb: ")
+
 
 tf = open("madLips.txt")
 text = tf.read()
 t = ''
-regex = re.compile(r"(VERB)?(ADVERB)?(ADJECTIVE)?(NOUN)?")
 
 # TODO: change code below with regex sub
 print(text)
@@ -29,5 +28,3 @@ for word in text.split():
 tf.close()
 tf = open("madLips.txt", "w")
 tf.write(t)
-
-print(t)
